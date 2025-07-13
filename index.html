@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suniko — Web3 Marketing</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- шрифты и фавикон -->
+    </head>
+    <body>
+        <!-- == Шапка == -->
+        <header class="header">
+            <div class="container header__container">
+                <a href="#" class="logo" aria-label="Suniko">
+                    <img src="img/logo-header.svg" alt="Suniko logo"
+                        class="logo__img">
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#what-we-do">What we do</a></li>
+                        <li><a href="#advantages">Advantages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <!-- Бургер-кнопка для мобилы -->
+                <button class="burger" aria-label="Открыть меню" type="button">
+                    <span class="burger-line burger-line--top"></span>
+                    <span class="burger-line burger-line--bottom"></span>
+                </button>
+
+            </div>
+            <!-- Мобильное меню (скрыто по умолчанию) -->
+            <div class="mobile-menu">
+                <div class="mobile-menu__top">
+                    <a href="/" class="mobile-menu__logo"
+                        aria-label="На главную">
+                        <img src="/img/logo-header.svg" alt="Suniko" />
+                    </a>
+                    <button class="mobile-menu__close"
+                        aria-label="Close menu">&times;</button>
+                </div>
+                <ul class="mobile-menu__list">
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#what-we-do">What we do</a></li>
+                    <li><a href="#advantages">Advantages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu__cta">
+                    <h2>Let's grow<br>your project</h2>
+                    <div class="mobile-menu__email">
+                        <input type="email" value="hello@suniko.agency"
+                            readonly>
+                        <button><img src="/img/arrow.svg"
+                                alt="Send"></button>
+                    </div>
+                    <div class="mobile-menu__socials">
+                        <a href="#" class="btn btn--white">TWITTER</a>
+                        <a href="#" class="btn btn--white">TELEGRAM</a>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Главный экран: лого, ниндзя, большой заголовок, кнопка, пункты -->
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__main">
+
+                    <div class="hero__logo-combo">
+
+                        <img src="img/Suniko-logo.svg" alt="Suniko logo"
+                            class="hero__logo-img">
+
+                        <div class="hero__badges">
+                            <span class="hero__badge hero__badge--left">Web3
+                                Marketing</span>
+                            <span
+                                class="hero__badge hero__badge--right">Reimagined</span>
+                        </div>
+
+                        <div class="hero__img-layer">
+                            <img src="img/frog-left.webp"
+                                alt="Ninja Frog behind" class="frog-left">
+                            <a href="#contact" class="hero__cta">WORK WITH
+                                US</a>
+                            <img src="img/frog-right.webp"
+                                alt="Ninja Frog front" class="frog-right">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__dots">
+                    <div class="hero__dot hero__dot--left">
+                        <span class="dot"></span>
+                        <span class="dot-label">Storytelling</span>
+                    </div>
+                    <div class="hero__dot hero__dot--bottom">
+                        <span class="dot"></span>
+                        <span class="dot-label">Scaling</span>
+                    </div>
+                    <div class="hero__dot hero__dot--right">
+                        <span class="dot"></span>
+                        <span class="dot-label">Strategy</span>
+                    </div>
+                    <span class="dot dot--sm" style="top:83%;left:42%"></span>
+                    <span class="dot dot--sm" style="top:68%;left:65%"></span>
+                    <span class="dot dot--sm" style="top:53%;left:73%"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== ABOUT ================== -->
+
+        <section class="about" id="about">
+            <div class="about__mountain"></div>
+            <div class="about__container">
+                <span class="about__subtitle">ABOUT</span>
+                <h3 class="about__title">We help Web3 brands grow,<br> resonate,
+                    and lead</h3>
+                <p class="about__text about__text--top">
+                    Suniko is a marketing agency focused<br>
+                    on Web3, crypto, and emerging tech.
+                </p>
+                <img src="img/3frogs.webp" alt="Three Heads Meme"
+                    class="about__image" />
+            </div>
+        </section>
+
+        <section class="about-wave">
+            <div class="about__mountain-wave"></div>
+            <div class="about-wave__container">
+                <p class="about__text about__text--bottom">
+                    We craft bold strategies, build<br>
+                    narratives that stick, and scale<br>
+                    communities across the digital world.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============= WHAT WE DO ============= -->
+
+        <section class="what-we-do" id="what-we-do">
+            <div class="container what-we-do__container">
+                <div class="services">
+                    <div class="service-card card-outline card-left-top">
+                        <img src="img/card1-_1_.webp"
+                            alt="Content & Storytelling">
+                        <h4>Content & Storytelling</h4>
+                        <p>From memes to manifestos —<br>we make your voice
+                            heard</p>
+                    </div>
+                    <div class="service-card card-dark card-right-top">
+                        <img src="img/card2_1_.webp" alt="Marketing Strategy">
+                        <h4>Marketing Strategy</h4>
+                        <p>Custom growth plans for crypto-native products</p>
+                    </div>
+
+                    <h2 class="what-we-do__title">What<br>we do</h2>
+
+                    <div class="service-card card-green card-left-bottom">
+                        <img src="img/card3-_1_.webp"
+                            alt="Campaigns & Launches">
+                        <h4>Campaigns & Launches</h4>
+                        <p>Full-stack execution for mints, tokens, and more</p>
+                    </div>
+                    <div class="service-card card-red card-right-bottom">
+                        <img src="img/card4-_1_.webp"
+                            alt="Influencer & Community Ops">
+                        <h4>Influencer & Community Ops</h4>
+                        <p>Activating real audiences, not empty numbers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== ADVANTAGES ============== -->
+        <section class="advantages" id="advantages">
+            <div class="container advantages__container">
+                <h2 class="advantages__title">Why teams<br>choose us</h2>
+                <div class="advantages__list">
+
+                    <!-- ====== Десктоп ====== -->
+                    <div
+                        class="advantage-item advantage-item--desktop hide-mobile">
+                        <span class="advantage-number">01/</span>
+                        <span class="advantage-img-wrap">
+                            <img src="/img/kart1.webp" alt
+                                class="advantage-img" />
+                        </span>
+                        <span class="advantage-text">
+                            Web3-native team with<br>deep experience
+                        </span>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--desktop hide-mobile">
+                        <span class="advantage-number">02/</span>
+                        <span class="advantage-img-wrap">
+                            <img src="/img/kart2.webp" alt
+                                class="advantage-img" />
+                        </span>
+                        <span class="advantage-text">
+                            Agile, data-driven<br>approach
+                        </span>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--desktop hide-mobile">
+                        <span class="advantage-number">03/</span>
+                        <span class="advantage-img-wrap">
+                            <img src="/img/kart3.webp" alt
+                                class="advantage-img" />
+                        </span>
+                        <span class="advantage-text">
+                            Design + meme fluency<br>for maximum reach
+                        </span>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--desktop hide-mobile">
+                        <span class="advantage-number">04/</span>
+                        <span class="advantage-img-wrap">
+                            <img src="/img/kart4.webp" alt
+                                class="advantage-img" />
+                        </span>
+                        <span class="advantage-text">
+                            Proven track record<br>with top projects
+                        </span>
+                    </div>
+
+                    <!-- ====== Мобилка ====== -->
+                    <div
+                        class="advantage-item advantage-item--mobile hide-desktop">
+                        <span class="advantage-text">
+                            Web3-native team with<br>deep experience
+                        </span>
+                        <div class="advantage-bottom-row">
+                            <span class="advantage-number">01/</span>
+                            <span class="advantage-img-wrap">
+                                <img src="/img/kart1mob.webp" alt
+                                    class="advantage-img" />
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--mobile hide-desktop">
+                        <span class="advantage-text">
+                            Agile, data-driven<br>approach
+                        </span>
+                        <div class="advantage-bottom-row">
+                            <span class="advantage-number">02/</span>
+                            <span class="advantage-img-wrap">
+                                <img src="/img/kart2mob.webp" alt
+                                    class="advantage-img" />
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--mobile hide-desktop">
+                        <span class="advantage-text">
+                            Design + meme fluency<br>for maximum reach
+                        </span>
+                        <div class="advantage-bottom-row">
+                            <span class="advantage-number">03/</span>
+                            <span class="advantage-img-wrap">
+                                <img src="/img/kart3mob.webp" alt
+                                    class="advantage-img" />
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="advantage-item advantage-item--mobile hide-desktop">
+                        <span class="advantage-text">
+                            Proven track record<br>with top projects
+                        </span>
+                        <div class="advantage-bottom-row">
+                            <span class="advantage-number">04/</span>
+                            <span class="advantage-img-wrap">
+                                <img src="/img/kart4mob.webp" alt
+                                    class="advantage-img" />
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== CTA / CONTACT =================== -->
+        <section class="cta">
+            <div class="cta-center">
+                <div class="cta-circle-wrap">
+                    <div class="cta-circle"></div>
+                    <img class="cta-tree" src="img/tree.svg" alt="Tree" />
+                </div>
+                <div class="cta-content">
+                    <h2 class="cta-title">
+                        Let’s grow<br>your project
+                    </h2>
+                    <div class="cta-subtitle">
+                        Whether you're launching, scaling, or pivoting —<br>
+                        we’ll build your strategy and make it stick.
+                    </div>
+                    <button class="cta-btn">SCHEDULE A CALL</button>
+                    <form class="cta-form">
+                        <input type="email" class="cta-input"
+                            placeholder="hello@suniko.agency" />
+                        <button class="cta-input-btn" type="submit">
+                            <img src="img/arrow.svg" alt="Go" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="cta-note-wrap">
+                <div class="cta-note-sphere"></div>
+                <div class="cta-note-text">
+                    Built by Suniko.<br>
+                    Based in crypto.<br>
+                    Inspired by Memes.
+                </div>
+            </div>
+
+            <img class="cta-frog-bg" src="img/frog-last.webp"
+                alt="Frog on snow" />
+
+            <div class="cta-socials">
+                <a href="#" class="cta-social-btn cta-social-btn--tw"
+                    target="_blank">TWITTER</a>
+                <a href="#" class="cta-social-btn cta-social-btn--tg"
+                    target="_blank">TELEGRAM</a>
+            </div>
+
+        </section>
+
+        <!-- Основной JS -->
+        <script src="app.js"></script>
+    </body>
+</html>
