@@ -49,6 +49,39 @@
   --z-modal: 1000;
 }
 
+svg {
+  display: block;
+  width: 258px;
+  height: 258px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tree {
+  fill: var(--Main-black);
+}
+
+.circle-mask {
+  transform-origin: 50% 90%;
+  animation: scale 5s infinite ease-out;
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  7%,
+  90% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
@@ -585,15 +618,17 @@ body.menu-open .mobile-menu {
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
   pointer-events: auto;
-  opacity: 0;
-  filter: brightness(0.2) blur(7px);
-  transition: opacity 0.5s 1s cubic-bezier(0.16, 0.98, 0.56, 1.14),
-    filter 0.5s 1s cubic-bezier(0.16, 0.98, 0.56, 1.14);
+  opacity: 0.25;
+  filter: blur(8px);
+  transition: opacity 2s 1s cubic-bezier(0.16, 0.98, 0.56, 1.14),
+    filter 2s 1s cubic-bezier(0.16, 0.98, 0.56, 1.14);
 }
 
 .hero__cta._visible {
   opacity: 1;
-  filter: brightness(1) blur(0);
+  filter: blur(0);
+  transition: opacity 2s cubic-bezier(0.16, 0.98, 0.56, 1.14),
+    filter 2s cubic-bezier(0.16, 0.98, 0.56, 1.14);
 }
 
 .hero__cta:hover {
@@ -634,19 +669,26 @@ body.menu-open .mobile-menu {
 .dot--sm {
   position: absolute;
   z-index: 1;
+  animation: dot-pulse 2.7s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero__dot--left {
   left: 24%;
   top: 60%;
+  animation: dot-pulse 2.7s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.2s;
 }
 .hero__dot--bottom {
   left: 29%;
   top: 75%;
+  animation: dot-pulse 2.7s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0.5s;
 }
 .hero__dot--right {
   right: 23%;
   top: 74%;
+  animation: dot-pulse 2.7s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 1s;
 }
 .dot {
   width: clamp(8px, 1vw, 13px);
@@ -662,6 +704,29 @@ body.menu-open .mobile-menu {
   color: var(--Main-grey, #e7e7e7);
   opacity: 0.85;
   text-shadow: 0 2px 6px #2227;
+}
+
+@keyframes dot-pulse {
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  20% {
+    opacity: 0.85;
+    filter: brightness(1.22);
+  }
+  50% {
+    opacity: 0.6;
+    filter: brightness(1.4);
+  }
+  80% {
+    opacity: 0.9;
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -964,6 +1029,37 @@ body.menu-open .mobile-menu {
   margin-bottom: 2em;
 }
 
+.about__subtitle,
+.about__title,
+.about__text--top,
+.about__image {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about__container._visible .about__subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+.about__container._visible .about__title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+.about__container._visible .about__text--top {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.about__container._visible .about__image {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
 .about__image {
   width: clamp(27rem, 60vw, 72rem);
   max-width: 100%;
@@ -1194,8 +1290,9 @@ body.menu-open .mobile-menu {
 .what-we-do {
   position: relative;
   background: var(--Main-grey);
-  padding: 0 0 100px 0;
-  min-height: 1122px;
+  padding: 0;
+  /* min-height: 1122px; */
+  max-height: 1100px;
   width: 100vw;
   overflow: hidden;
 }
@@ -1235,7 +1332,9 @@ body.menu-open .mobile-menu {
   background: var(--Main-grey);
   z-index: 1;
   margin: 0;
-  transition: width 0.3s, max-width 0.3s;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+  will-change: transform;
+  --parallax: 0px;
 }
 
 .service-card img {
@@ -1297,10 +1396,12 @@ body.menu-open .mobile-menu {
 
 .card-right-top {
   transform: translate(0%, 3%);
+  transform: translate(0%, 3%) translateY(var(--parallax));
 }
 
 .card-right-bottom {
   transform: translate(30%, -45%);
+  transform: translate(30%, -45%) translateY(var(--parallax));
 }
 
 .card-left-top,
@@ -1310,10 +1411,12 @@ body.menu-open .mobile-menu {
 
 .card-left-top {
   transform: translate(-60%, -44%);
+  transform: translate(-60%, -44%) translateY(var(--parallax));
 }
 
 .card-left-bottom {
   transform: translate(-20%, -110%);
+  transform: translate(-20%, -110%) translateY(var(--parallax));
 }
 
 .what-we-do__title {
@@ -1748,7 +1851,6 @@ body.menu-open .mobile-menu {
 
 .cta-circle {
   width: 590px;
-  max-width: 100vw;
   height: 590px;
   border-radius: 50%;
   background: var(--Main-black);
@@ -2039,7 +2141,7 @@ body.menu-open .mobile-menu {
   }
 
   .cta-content {
-    top: 50%;
+    top: 42%;
     gap: 20px;
   }
   .cta-title {
@@ -2082,6 +2184,12 @@ body.menu-open .mobile-menu {
     text-transform: uppercase;
   }
 
+  .cta-form {
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+  }
+
   .cta-input {
     height: 50px;
     font-size: 1rem;
@@ -2094,7 +2202,7 @@ body.menu-open .mobile-menu {
   .cta-input-btn {
     width: 40px;
     height: 40px;
-    margin-left: -12%;
+    margin-left: -15%;
   }
 
   .cta-input-btn img {
@@ -2103,10 +2211,10 @@ body.menu-open .mobile-menu {
   }
 
   .cta-note-wrap {
-    width: 347px;
+    width: 120%;
     height: 346px;
     margin: 0 auto;
-    top: 70%;
+    top: 65%;
     left: 50%;
   }
 
@@ -2117,20 +2225,38 @@ body.menu-open .mobile-menu {
   .cta-note-text {
     font-size: 21px;
     line-height: 90%;
-    top: 20%;
+    top: 18%;
   }
   .cta-frog-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    transform: none;
+    width: 100vw;
   }
 
   .cta-socials {
     gap: 5px;
-    max-width: 280px;
+    width: 96%;
+    bottom: 20px;
   }
 
   .cta-social-btn {
     padding: 10px 0;
     font-size: 14px;
     height: 30px;
-    max-width: 140px !important;
+  }
+
+  .cta-social-btn--tw {
+    width: 241px;
+    min-width: 140px;
+    max-width: 241px;
+  }
+
+  .cta-social-btn--tg {
+    width: 267px;
+    min-width: 140px;
+    max-width: 267px;
   }
 }
